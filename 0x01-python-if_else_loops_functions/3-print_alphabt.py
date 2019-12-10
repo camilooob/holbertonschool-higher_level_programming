@@ -2,4 +2,4 @@
 for i in range(ord('a'), ord('{')):
     if i == 113 or i == 101:
         continue
-    print(chr(i), end='')
+    print("{0:s}".format(chr(i)), end='')
