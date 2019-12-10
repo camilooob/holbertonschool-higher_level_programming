@@ -8,22 +8,23 @@
  *
  */
 
-const listint_t *current;
-unsigned int n;
-
 int check_cycle(listint_t *list)
 {
-  current = list;
-  n = 0;
 
-  while (current != NULL)
+  listint_t *current;
+  
+  if(list)
   {
-  current = current->next;
-  n++;
-
+  while (list != NULL)
+  {
+	current = list;
+  list = list->next;
+  if(current <= list)
+	return (1);
   }
   return(0);
-
+  }
+  return(0);
 
 }
 
