@@ -7,8 +7,23 @@
  * @list: input
  *
  */
+
+const listint_t *current;
+unsigned int n;
+
 int check_cycle(listint_t *list)
 {
-  return (0);
+  current = list;
+  n = 0;
+
+  while (current != NULL)
+  {
+  current = current->next;
+  n++;
+
+  }
+  return(0);
+
+
 }
 
