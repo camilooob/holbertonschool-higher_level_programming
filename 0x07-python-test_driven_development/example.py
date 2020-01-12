@@ -56,3 +56,28 @@ def factorial(n):
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
+    """
+    Test 1:
+    >>> add_integer(0, 0)
+    0
+
+    Test 2:
+    >>> add_integer(0, -3)
+    -3
+
+    Test 3:
+    >>> add_integer(-1, b)
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+    Test 4:
+    >>> add_integer(a, 5)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+    Test 5:
+    >>> add_integer(10.27564.10.5647335)
+    20
+    """
