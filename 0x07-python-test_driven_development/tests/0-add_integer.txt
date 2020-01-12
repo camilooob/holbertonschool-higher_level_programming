@@ -36,6 +36,9 @@ Test 7:
     >>> add_integer(0, -3)
     -3
 
+Test with Strings:
+------------------
+
 Test 8:
     >>> add_integer(-1, "b")
     Traceback (most recent call last):
@@ -48,6 +51,79 @@ Test 9:
         ...
     TypeError: a must be an integer
 
+Test with Floats:
+------------------
+
 Test 10:
     >>> add_integer(10.27564, 10.5647335)
     20
+
+Test with None:
+------------------
+Test 11:
+    >>> add_integer(None, 5)
+    Traceback (most recent call last):
+          ...
+    TypeError: a must be an integer
+
+Test 12:
+    >>> add_integer(5, None)
+    Traceback (most recent call last):
+              ...
+    TypeError: b must be an integer
+
+Test with List:
+------------------
+Test 13:
+    >>> add_integer([4, 1], 3)
+    Traceback (most recent call last):
+              ...
+    TypeError: a must be an integer
+
+Test 14:
+    >>> add_integer(3, [4, 1])
+    Traceback (most recent call last):
+              ...
+    TypeError: b must be an integer
+
+Test with Tuple:
+------------------
+Test 15:
+    >>> add_integer((5, 3), 7)
+    Traceback (most recent call last):
+          ...
+    TypeError: a must be an integer
+
+Test 16:
+    >>> add_integer(7, (5, 3))
+    Traceback (most recent call last):
+              ...
+    TypeError: b must be an integer
+
+Test with Set:
+------------------
+Test 17:
+    >>> add_integer({5, 3}, 7)
+    Traceback (most recent call last):
+              ...
+    TypeError: a must be an integer
+
+Test 18:
+    >>> add_integer(7, {5, 3})
+    Traceback (most recent call last):
+              ...
+    TypeError: b must be an integer
+
+Test with Dictionary:
+------------------
+Test 19:
+    >>> add_integer({"Hi": 5}, 7)
+    Traceback (most recent call last):
+              ...
+    TypeError: a must be an integer
+
+Test 20:
+    >>> add_integer(2, {"Hi": 7})
+    Traceback (most recent call last):
+              ...
+    TypeError: b must be an integer
