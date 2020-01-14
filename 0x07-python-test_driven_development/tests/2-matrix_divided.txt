@@ -1,0 +1,61 @@
+Test for ``matrix_divided`` function
+=================================
+
+Import function ``matrix_divided``
+---------------------------------
+
+This is an test file, for matrix_divided function:
+
+Test 1 - check import ok:
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+
+Test Error Matrix:
+------------------
+Test 2:
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, 3)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+Test 3:
+	>>> matrix_divided(matrix, 8)
+	[[0.12, 0.25, 0.38], [0.5, 0.62, 0.75]]
+
+Test 4:
+	>>> matrix = [10, 33, "i"]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test 5:
+	>>> matrix = [[13, 22], ["hi", "holberton"]]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test 6:
+	>>> matrix = [[11, 22, 33], [10, 16]]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+	TypeError: Each row of the matrix must have the same size
+
+Test 7:
+	>>> matrix = [[13, 24, "holberton"], [1, 2]]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test 8:
+	>>> matrix = [[5.5, 4.5, 2.5], [1.5, 4.5, 3.5]]
+	>>> matrix_divided(matrix, 3)
+	[[1.83, 1.5, 0.83], [0.5, 1.5, 1.17]]
+
+Test 9:
+	>>> matrix = [[5.5, 12, 2.5], [1.5, 4, 3.5]]
+	>>> matrix_divided(matrix, 3)
+	[[1.83, 4.0, 0.83], [0.5, 1.33, 1.17]]
+
+Test 10:
+	>>> matrix = "holberton"
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
