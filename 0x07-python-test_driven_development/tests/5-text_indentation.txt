@@ -1,0 +1,27 @@
+Test for ``text_indentation`` function
+=================================
+
+Import function ``text_indentation``
+---------------------------------
+
+This is an test file, for say_my_name function:
+
+Test 1 - check import ok:
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test text_indentation:
+------------------
+
+>>> text_indentation("hiholberton")
+	hola
+	>>> text_indentation("hiholberton.")
+	hola.
+	<BLANKLINE>
+	>>> text_indentation("hiholberton.?")
+	hola.
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+	>>> text_indentation(76)
+	Traceback (most recent call last):
+	TypeError: text must be a string

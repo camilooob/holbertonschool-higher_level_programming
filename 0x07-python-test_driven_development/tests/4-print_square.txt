@@ -1,0 +1,39 @@
+Test for ``print_square`` function
+=================================
+
+Import function ``print_square``
+---------------------------------
+
+This is an test file, for print_square function:
+
+Test 1 - check import ok:
+>>> print_square = __import__('4-print_square').print_square
+
+Test print_square:
+------------------
+
+	>>> print_square(5j)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+
+	>>> print_square(-35)
+	Traceback (most recent call last):
+	ValueError: size must be >= 0
+
+
+	>>> print_square(3.0)
+	##
+	##
+
+	>>> print_square(0.5)
+
+
+	>>> print_square(1e34962)
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer
+
+
+	>>> print_square("Hiholberton")
+	Traceback (most recent call last):
+	TypeError: size must be an integer

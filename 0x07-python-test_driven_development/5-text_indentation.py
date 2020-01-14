@@ -3,7 +3,10 @@
 The text_indentation function formating text. For example,
 >>> text_indentation(Non autem hoc: igitur ne illud)
 """
-def text_indentation(text) :
+def text_indentation(text):
+    """This function formating text.
+    Return the result in new text.
+    Raise Error if data is diferrent."""
     if type(text) is not str:
         raise TypeError("text must be a string")
     x = 0

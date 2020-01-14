@@ -5,6 +5,9 @@ The matrix_divided function divided matrix. For example,
 [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
 """
 def print_square(size):
+    """This function print squeare.
+    Return square in console.
+    Raise Error if data is diferrent."""
     if not (isinstance(size, int)):
         raise TypeError("size must be an integer")
     if size < 0:
