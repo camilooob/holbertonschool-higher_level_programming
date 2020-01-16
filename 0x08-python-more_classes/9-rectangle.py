@@ -28,7 +28,8 @@ class Rectangle:
         """The function return a string that can be used for generate another
         object of this class"""
 
-        return "Rectangle" + "(" + str(self.__width) + "," + str(self.__height) + ")"
+        return "Rectangle" + "(" + str(self.__width) + "," + \
+        str(self.__height) + ")"
 
     def __str__(self):
         """Return a string fro printing"""
