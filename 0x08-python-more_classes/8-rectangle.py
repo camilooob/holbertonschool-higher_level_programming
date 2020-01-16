@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 class Rectangle:
     """ Init Class width set 0 and height set 0"""
+
     number_of_instances = 0
-    print_symbol = '#'
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """ Constructor """
@@ -40,20 +41,20 @@ class Rectangle:
 
     def area(self):
         """ Calculate Area """
-        return (self.__height * self.__width)
+        return self.__height * self.__width
 
     def perimeter(self):
         """ Calculate Perimeter """
         if self.__height == 0 or self.__width == 0:
             return 0
         else:
-            return ((self.__height * 2) + (self.__width * 2))
+            return (self.__height * 2) + (self.__width * 2)
 
     def __str__(self):
         """ Rectangle for print """
         recstr = ""
         if self.width == 0 or self.height == 0:
-            return (recstr)
+            return recstr
         else:
             sym = self.print_symbol
             for j in range(self.height):
