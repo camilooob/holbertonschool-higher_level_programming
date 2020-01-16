@@ -24,8 +24,8 @@ class Rectangle:
         """The function return a string that can be used for generate another
         object of this class"""
 
-        return "Rectangle" + "(" + str(self.__width) + "," + \
-        str(self.__height) + ")"
+        return "Rectangle" + '(' + str(self.__width) + ',' + \
+            str(self.__height) + ')'
 
     def __str__(self):
         """Return a string fro printing"""
@@ -34,7 +34,7 @@ class Rectangle:
         for j in range(self.__height):
             for i in range(self.__width):
                 string += str(self.print_symbol)
-            string += "\n"
+            string += '\n'
         return string[:-1]
 
     def __del__(self):
@@ -85,4 +85,4 @@ class Rectangle:
     def perimeter(self):
         if self.__width is 0 or self.__height is 0:
             return 0
-        return (self.__width * 2) + (self.__height * 2)
+        return ((self.__width * 2) + (self.__height * 2))
