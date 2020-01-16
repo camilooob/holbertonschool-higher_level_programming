@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-""" Creates a Rectangle class"""
 class Rectangle:
     """ Init Class width set 0 and height set 0"""
     def __init__(self, width=0, height=0):
