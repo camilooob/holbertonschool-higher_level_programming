@@ -1,4 +1,4 @@
-#include "list.h"
+#include "lists.h"
 /**
  * PalindromeRecur - Check if linked list is palindrome.
  * @left: Head of list
@@ -12,10 +12,10 @@ int PalindromeRecur(listint_t **left, listint_t *right)
 		return (1);
 
 	pal = PalindromeRecur(left, right->next);
-	if (pal = 0)
+	if (pal == 0)
 		return (0);
 
-	pal = (righth->n == (*left)->n);
+	pal = (right->n == (*left)->n);
 
 	*left = (*left)->next;
 	return (pal);
@@ -26,12 +26,12 @@ int PalindromeRecur(listint_t **left, listint_t *right)
  * @head: give list
  * @right: Last element take it in recursion.
  */
-int is_palindrome(listint_t **head):
+int is_palindrome(listint_t **head)
 {
 	int res;
 
 	if (!head)
 		return (0);
-	res = RecursivePalindrome(head, *head)
-		return (res);
+	res = PalindromeRecur(head, *head);
+	return (res);
 }
