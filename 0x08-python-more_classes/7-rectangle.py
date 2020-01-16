@@ -1,72 +1,87 @@
 #!/usr/bin/python3
 class Rectangle:
-    """ Init Class width set 0 and height set 0"""
+    """This class is for manage a rectangle"""
+
     number_of_instances = 0
-    print_symbol = '#'
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        """ Constructor """
-        self.__width = width
-        self.__height = height
+        """Set a objet with width and height"""
+
+        if height < 0:
+            raise ValueError("width must be >= 0")
+        else:
+            self.__height = height
+
+        if width < 0:
+            raise ValueError("width must be >= 0")
+        else:
+            self.__width = width
+
         Rectangle.number_of_instances += 1
+
+    def __repr__(self):
+        """The function return a string that can be used for generate another
+        object of this class"""
+
+        return "Rectangle" + "(" + str(self.__width) + "," + str(self.__height) + ")"
+
+    def __str__(self):
+        """Return a string fro printing"""
+
+        string = ""
+        for j in range(self.__height):
+            for i in range(self.__width):
+                string += str(self.print_symbol)
+            string += "\n"
+        return string[:-1]
+
+    def __del__(self):
+        """Show a masage if some instance if delete"""
+
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
 
     @property
     def width(self):
-        """ Width Getter """
+        """Put width"""
+
         return self.__width
 
     @width.setter
     def width(self, value):
-        """ Width Setter """
-        if not isinstance(value, int):
+        """set the width in the object"""
+
+        if type(value) is not int:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        self.__width = value
+        else:
+            self.__width = value
 
     @property
     def height(self):
-        """ Height Getter """
+        """Put height"""
+
         return self.__height
 
     @height.setter
     def height(self, value):
-        """ Height Setter """
-        if not isinstance(value, int):
+        """Set the height of the object"""
+
+        if type(value) is not int:
             raise TypeError("height must be an integer")
+
         if value < 0:
             raise ValueError("height must be >= 0")
-        self.__height = value
+        else:
+            self.__height = value
 
+    # Public Methods
     def area(self):
-        """ Calculate Area """
-        return (self.__height * self.__width)
+        return self.__width * self.__height
 
     def perimeter(self):
-        """ Calculate Perimeter """
-        if self.__height == 0 or self.__width == 0:
+        if self.__width is 0 or self.__height is 0:
             return 0
-        else:
-            return ((self.__height * 2) + (self.__width * 2))
-
-    def __str__(self):
-        """ Returns the Rectangle for printing """
-        recstr = ""
-        if self.width == 0 or self.height == 0:
-            return (recstr)
-        else:
-            sym = self.print_symbol
-            for j in range(self.height):
-                recstr += "{}".format(sym * self.__width)
-                if j != (self.height - 1):
-                    recstr += "\n"
-        return recstr
-
-    def __repr__(self):
-        """ Representation a string """
-        return "Rectangle({:d}, {:d})".format(self.width, self.height)
-
-    def __del__(self):
-        """ Action when object is deleted """
-        Rectangle.number_of_instances -= 1
-        print("Bye rectangle...")
+        return (self.__width * 2) + (self.__height * 2)
