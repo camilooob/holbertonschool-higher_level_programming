@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 class Rectangle:
     """This class is for manage a rectangle"""
@@ -43,4 +42,3 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         else:
             self.__height = value
-            
