@@ -2,22 +2,24 @@
 """Unittest for max_integer([..])
 """
 import unittest
-max_integer = __import__('6-max_integer').max_integer
+
+max_integer = __import__("6-max_integer").max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
-    """class for unit test"""
+    """This class is for make unit testi"""
 
     def number_test(self):
-        """This function make unit to max_integer"""
-        self.assertAlmostEqual(max_integer([12, 2, 4, -5]), 12)
-        self.assertAlmostEqual(max_integer([3, 2.5, 5, 3.5]), 4.5)
-        self.assertAlmostEqual(max_integer([-2, -3, -5, 0]), 0)
+        """This function make unit test for the funtion
+        max_integer"""
+        self.assertAlmostEqual(max_integer([10, 5, 7, -3]), 10)
+        self.assertAlmostEqual(max_integer([1, 1.5, 2, 2.5]), 2.5)
+        self.assertAlmostEqual(max_integer([-1, -2, -3, 0]), 0)
         self.assertAlmostEqual(max_integer([]), None)
 
-    def raised_test(self):
-        """This function raised error"""
-        self.assertAlmostEqual(max_integer({3, 0}), 6)
-        self.assertRaises(TypeError, max_integer, "hiii")
-        self.assertRaises(TypeError, max_integer, [7j, 3, 4])
-        self.assertRaises(TypeError, max_integer, [4e123356, 1, 3])
+    def raised_text(self):
+        """This function identify the raised errors"""
+        self.assertAlmostEqual(max_integer({5, 0}), 5)
+        self.assertRaises(TypeError, max_integer, "hola")
+        self.assertRaises(TypeError, max_integer, [5j, 1, 7])
+        self.assertRaises(TypeError, max_integer, [5e123456, 7, 9])
