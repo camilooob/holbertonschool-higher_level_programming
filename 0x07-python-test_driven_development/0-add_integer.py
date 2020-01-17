@@ -5,15 +5,17 @@ def add_integer(a, b=98):
     Return the result int datatype.
     Raise TypeError if data is diferrent that int.
     """
-    if type(a) in [int, float]:
-        num1 = int(a)
-    else:
+    if not (isinstance(a, int) or isinstance(a, float)):
         raise TypeError("a must be an integer")
 
-    if type(b) in [int, float]:
-        num2 = int(b)
-    else:
+    if not (isinstance(b, int) or isinstance(b, float)):
         raise TypeError("b must be an integer")
 
-    if type(num1) is int and type(num2) is int:
-        return num1 + num2
+    if isinstance(a, float) or isinstance(a, int):
+        a = int(a)
+
+    if isinstance(b, float) or isinstance(b, int):
+        b = int(b)
+
+    if isinstance(a, int) and isinstance(b, int):
+        return int(a + b)
