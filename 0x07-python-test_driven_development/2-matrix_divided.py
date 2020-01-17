@@ -1,47 +1,49 @@
 #!/usr/bin/python3
-"""This is  the "matrix_divided" function.
-The matrix_divided function divided matrix. For example,
->>> matrix_divided([[1, 2, 3],[4, 5, 6]], 3)
-[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
-"""
 def matrix_divided(matrix, div):
-    """This function divided a matrix.
-    Return the result in new matrix.
-    Raise Error if data is diferrent."""
+    """''def matrix_divided(matrix, div):'' divide each
+    elelemt of the matrix is divided by div and
+    return a new matrix with the results with a 2
+    precision numbers. If div not is a number raise
+    TypeError or ZeroDivisionError if div is 0:
+    If matrix not is a list of lists return TypeError.
+    If some sub-list aren't a list return TypeError.
+    If some element of some sub-list aren't integer
+    or float number return TypeError."""
+
     if type(div) not in [int, float]:
         raise TypeError("div must be a number")
     elif div is 0:
         raise ZeroDivisionError("division by zero")
 
     if type(matrix) is not list or len(matrix) is 0:
-        raise TypeError("matrix must be a matrix (list of lists) of \
-        integers/floats")
+        raise TypeError(
+            "matrix must be a matrix (list of lists) of \
+        integers/floats"
+        )
     else:
 
         for i in matrix:
             if type(i) is not list:
-                raise TypeError("matrix must be a matrix (list of lists) of \
-                integers/floats")
+                raise TypeError(
+                    "matrix must be a matrix (list of lists) of \
+                integers/floats"
+                )
             else:
                 for j in i:
                     if type(j) not in [int, float]:
-                        raise TypeError("matrix must be a matrix (list of lists) \
-                        of integers/floats")
+                        raise TypeError(
+                            "matrix must be a matrix (list of lists) \
+                        of integers/floats"
+                        )
 
-        lentrix = len(matrix[0])
+        r_len = len(matrix[0])
         for n in range(len(matrix)):
-            if len(matrix[n]) != lentrix:
-                raise TypeError("Each row of the matrix must have \
-                the same size")
-    matrix1 = []
-    matrix2 = []
-    matrix10 = [matrix1, matrix2]
-    z = 1
-    for i in matrix:
-        for j in i:
-            if z <= 3:
-                matrix1.append(float("{0:.2f}".format((j / div))))
-            else:
-                matrix2.append(float("{0:.2f}".format((j / div))))
-            z += 1
-    return matrix10
+            if len(matrix[n]) != r_len:
+                raise TypeError(
+                    "Each row of the matrix must have \
+                the same size"
+                )
+
+        New_matrix = [[round((el / div), 2) for el in i] for i in matrix]
+
+    return New_matrix
