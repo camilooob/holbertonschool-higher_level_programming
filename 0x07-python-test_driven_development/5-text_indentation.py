@@ -3,6 +3,8 @@
 The text_indentation function formating text. For example,
 >>> text_indentation(Non autem hoc: igitur ne illud)
 """
+
+
 def text_indentation(text):
     """This function formating text.
     Return the result in new text.
@@ -12,8 +14,8 @@ def text_indentation(text):
     x = 0
     check = False
     for i in range(len(text)):
-        if text[i] in ['.', ':', '?']:
-            print(text[x:i + 1])
+        if text[i] in [".", ":", "?"]:
+            print(text[x : i + 1])
             print()
             x = i + 2
             bool = True
