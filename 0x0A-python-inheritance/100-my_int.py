@@ -3,6 +3,8 @@
 class
 My int
 """
+
+
 class MyInt(int):
     """ Change eq and ne"""
     def __eq__(self, num):
