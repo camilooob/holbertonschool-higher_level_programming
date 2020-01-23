@@ -1,20 +1,23 @@
 #!/usr/bin/python3
+"""
+Student Class
+"""
+
+
 class Student:
-    """Class Student"""
+
     def __init__(self, first_name, last_name, age):
-        """Constructor"""
+        """Instantiation, constructor"""
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self, attrs=None):
-        if not isinstance(attrs, list) or \
-        not all(isinstance(i, str) for i in attrs):
-
-            dic = self.__dict__.copy()
-
-        else:
-
-            dic = {i: self.__dict__[i] for i in attrs if i in self.__dict__}
-
-        return dic
+        """
+        Public method Retrieves a dictionary representation of a
+        Student instance
+        """
+        if (isinstance(attrs, list) and
+                all(isinstance(x, str) for x in attrs)):
+            return {x: getattr(self, x) for x in attrs if hasattr(self, x)}
+        return self.__dict__
