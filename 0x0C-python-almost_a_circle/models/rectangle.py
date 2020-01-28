@@ -87,6 +87,24 @@ class Rectangle(Base):
             print(' ' * self.x, end='')
             print(myhash * self.width)
 
+    def update(self, *args):
+        """ args Rectangle """
+        if len(args):
+            for i, j in enumerate(args):
+                if i == 0:
+                    self.id = j
+                elif i == 1:
+                    self.width = j
+                elif i == 3:
+                    self.x = j
+                elif i == 4:
+                    self.y = j
+
+
+
+
+
+
     def __str__(self):
         """ Str format """
         st = "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}"
