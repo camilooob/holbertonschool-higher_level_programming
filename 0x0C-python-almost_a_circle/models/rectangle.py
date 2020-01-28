@@ -87,7 +87,7 @@ class Rectangle(Base):
             print(' ' * self.x, end='')
             print(myhash * self.width)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ args Rectangle """
         if len(args):
             for i, j in enumerate(args):
@@ -99,11 +99,17 @@ class Rectangle(Base):
                     self.x = j
                 elif i == 4:
                     self.y = j
-
-
-
-
-
+        else:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "width" in kwargs:
+                self.width = kwargs["width"]
+            if "height" in kwargs:
+                self.height = kwargs["height"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
 
     def __str__(self):
         """ Str format """
