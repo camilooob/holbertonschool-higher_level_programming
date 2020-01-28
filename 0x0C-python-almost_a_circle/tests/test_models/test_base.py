@@ -15,4 +15,4 @@ class TestCodeFormat(unittest.TestCase):
                                            'models/rectangle.py',
                                            ])
         self.assertEqual(mode_base.total_errors, 0,
-                         "Found code style errors (and warnings).")
+                         "Found code style errors (models_base).")
