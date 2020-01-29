@@ -40,21 +40,21 @@ class Base:
 
         @staticmethod
         def from_json_string(json_string):
-        """ static method """
-        if not json_string or len(json_string) == 0:
-            return []
+            """ static method """
+            if not json_string or len(json_string) == 0:
+                return []
 
         return json.loads(json_string)
 
         @classmethod
         def create(cls, **dictionary):
-        """ class method """
-        if cls.__name__ == "Rectangle":
-            dummy = cls(1, 1)
-        elif cls.__name__ == "Square":
-            dummy = cls(1)
-        dummy.update(**dictionary)
-        return dummy
+            """ class method """
+            if cls.__name__ == "Rectangle":
+                dummy = cls(1, 1)
+            elif cls.__name__ == "Square":
+                dummy = cls(1)
+                dummy.update(**dictionary)
+                return dummy
 
         @classmethod
         def load_from_file(cls):
