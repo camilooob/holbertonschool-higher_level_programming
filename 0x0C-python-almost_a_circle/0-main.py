@@ -1,17 +1,20 @@
 #!/usr/bin/python3
-""" Check """
-import inspect
-from models.rectangle import Rectangle
+""" 0-main """
+from models.base import Base
 
-update_fct = Rectangle.__dict__.get("update")
-if update_fct is None:
-    print("Rectangle doesn't have method update")
-    exit(1)
+if __name__ == "__main__":
 
-if not inspect.isfunction(update_fct):
-    print("update is not a function")
-    exit(1)
+    b1 = Base()
+    print(b1.id)
 
-print("OK", end="")
+    b2 = Base()
+    print(b2.id)
+
+    b3 = Base()
+    print(b3.id)
+
+    b4 = Base(12)
+    print(b4.id)
+
     b5 = Base()
     print(b5.id)
