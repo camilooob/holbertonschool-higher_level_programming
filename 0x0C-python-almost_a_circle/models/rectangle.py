@@ -116,3 +116,9 @@ class Rectangle(Base):
         st = "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}"
         st = st.format(self.id, self.x, self.y, self.width, self.height)
         return st
+
+    def to_dictionary(self):
+        """ Dictionary of rectangle """
+        recdic = {"id": self.id, "width": self.width, "height": self.height,
+                     "x": self.x, "y": self.y}
+        return recdic
