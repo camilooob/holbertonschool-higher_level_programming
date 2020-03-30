@@ -1,4 +1,4 @@
-!/usr/bin/python3
+#!/usr/bin/python3
 """Module for states table"""
 from sqlalchemy import Table, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
