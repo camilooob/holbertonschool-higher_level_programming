@@ -1,1 +1,1 @@
-# Classes in JavaScript
+# 0x13. Javascript - Objects, Scopes and Closures
